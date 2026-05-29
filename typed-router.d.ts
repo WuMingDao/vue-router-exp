@@ -18,9 +18,16 @@ import type {
   _ExtractParamParserType,
 } from 'vue-router/experimental'
 
+// Custom route params parsers
+type Param_number = _ExtractParamParserType<typeof import('./src/params/number.ts').parser>
+type Param_testSet = _ExtractParamParserType<typeof import('./src/params/test-set.ts').parser>
+
 declare module 'vue-router' {
   interface TypesConfig {
-    _ParamParsers: {}
+    _ParamParsers: {
+      'number': { type: Param_number }
+      'test-set': { type: Param_testSet }
+    }
     RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap
     _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap
   }
@@ -48,8 +55,8 @@ declare module 'vue-router/auto-routes' {
     '/users/[id]': RouteRecordInfo<
       '/users/[id]',
       '/users/:id',
-      { id: ParamValue<true> },
-      { id: ParamValue<false> },
+      { id: Exclude<Param_number, unknown[] | null> },
+      { id: Exclude<Param_number, unknown[] | null> },
       | never
     >,
   }

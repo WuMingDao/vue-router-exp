@@ -10,6 +10,7 @@ definePage({
   },
 })
 
+// const route = useRoute('/users/[id=number]')
 const route = useRoute('/users/[id]')
 
 route.params.id // number

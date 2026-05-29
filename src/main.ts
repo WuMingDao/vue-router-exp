@@ -4,14 +4,14 @@ import { createApp } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 
 import App from './App.vue'
-import {router} from './router'
+import { router } from './router'
 
 declare module 'vue-router' {
   export interface TypesConfig {
     Router: typeof router
-    _ParamParsers: {
-      number: { type: number }
-    }
+    // _ParamParsers: {
+    //   number: { type: number }
+    // }
   }
 }
 
