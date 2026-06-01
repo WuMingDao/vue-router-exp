@@ -7,6 +7,9 @@ definePage({
     path: {
       id: 'number',
     },
+    query: {
+      page: { parser: 'number', format: 'value', default: 1 },
+    },
   },
 })
 
@@ -20,4 +23,6 @@ console.log(typeof route.params.id)
 
 <template>
   <h2>User {{ route.params.id }}</h2>
+  <p></p>
+  <p>Page: {{ route.query.page }}</p>
 </template>

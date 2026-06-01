@@ -55,8 +55,8 @@ declare module 'vue-router/auto-routes' {
     '/users/[id]': RouteRecordInfo<
       '/users/[id]',
       '/users/:id',
-      { id: Exclude<Param_number, unknown[] | null> },
-      { id: Exclude<Param_number, unknown[] | null> },
+      { id: Exclude<Param_number, unknown[] | null>, page?: Exclude<Param_number, unknown[] | null> },
+      { id: Exclude<Param_number, unknown[] | null>, page: Exclude<Param_number, unknown[] | null> },
       | never
     >,
   }
