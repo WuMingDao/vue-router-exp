@@ -1,4 +1,3 @@
-import './assets/main.css'
 
 import { createApp } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
@@ -9,9 +8,6 @@ import { router } from './router'
 declare module 'vue-router' {
   export interface TypesConfig {
     Router: typeof router
-    // _ParamParsers: {
-    //   number: { type: number }
-    // }
   }
 }
 

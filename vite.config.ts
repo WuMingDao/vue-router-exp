@@ -9,8 +9,10 @@ import VueRouter from 'vue-router/vite'
 export default defineConfig({
   plugins: [
     VueRouter({
-      experimental: {
-        paramParsers: true,
+        experimental: {
+        paramParsers: {
+          dir: 'src/params',
+        },
       },
     }),
     vue(),
